@@ -1,12 +1,19 @@
+import { useState } from "react";
 import Banner from "./components/Banner";
 import Form from "./components/Form";
-import TextField from "./components/TextField";
 
 function App() {
+  const [employees, setEmployees] = useState([]);
+
+  const onNewEmployeeAdded = (employee) => {
+    console.log(employee);
+    setEmployees([...employees, employee]); // Adiciona um novo colaborador ao array de colaboradores
+  };
+
   return (
     <div className="App">
       <Banner />
-      <Form />
+      <Form onEmployeeRegistered={(employee) => onNewEmployeeAdded(employee)} />
     </div>
   );
 }
