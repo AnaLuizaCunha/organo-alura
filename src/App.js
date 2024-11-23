@@ -45,7 +45,7 @@ function App() {
   const [employees, setEmployees] = useState([]);
 
   const onNewEmployeeAdded = (employee) => {
-    console.log(employee);
+    debugger;
     setEmployees([...employees, employee]); // Adiciona um novo colaborador ao array de colaboradores
   };
 
